@@ -14,6 +14,6 @@
   <%= form_tag("/mechanics/#{@mechanic.id}") do %>
     <%= label_tag :add_a_ride_to_workload %>
     <%= text_field_tag :add_ride %>
-    <%= submit_tag "Submit" %>
+    <%= submit_tag "Submit", params: {ride_id: :add_ride} %>
   <% end %>
 </section>
