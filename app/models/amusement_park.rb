@@ -1,3 +1,3 @@
 class AmusementPark < ApplicationRecord
-
-end 
+  has_many :rides 
+end
