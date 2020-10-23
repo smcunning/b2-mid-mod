@@ -15,5 +15,5 @@
 </section>
 
 <section class="thrill-rating">
-  <h2>Average Thrill Rating of Rides: <%= @park.average_thrill_rating %>/10</h2>
+  <h2>Average Thrill Rating of Rides: <%= @park.average_thrill_rating.to_f.round(1) %>/10</h2>
 </section>

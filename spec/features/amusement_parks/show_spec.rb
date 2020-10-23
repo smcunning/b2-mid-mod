@@ -45,9 +45,9 @@ describe 'on a amusement parks show page' do
   it 'has the average thrill rating of rides' do
 
     visit "/amusement-parks/#{@park_1.id}"
-
+    save_and_open_page
     within ".thrill-rating" do
-      expect(page).to have_content(@park_1.average_thrill_rating)
+      expect(page).to have_content(@park_1.average_thrill_rating.to_f.round(1))
     end
   end
 end
