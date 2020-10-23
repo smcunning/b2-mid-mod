@@ -12,7 +12,7 @@ describe 'mechanics show page' do
     @ride_2 =          Ride.create(name: "Fahrenheit",
                                    thrill_rating: 9,
                                    amusement_park_id: @park_1.id)
-    @ride_3 =          Ride.create(name: "The Kiss Raise",
+    @ride_3 =          Ride.create(name: "Kiss Raise",
                                    thrill_rating: 7,
                                    amusement_park_id: @park_1.id)
     @mech_ride_1 = MechanicRide.create(mechanic_id: @mechanic.id,
@@ -63,6 +63,17 @@ describe 'mechanics show page' do
 
     within '.rides' do
       expect(page).to have_content(ride_4.name)
+    end
+  end
+
+  it 'can list all mechanics rides in alphabetical order' do
+
+    visit "/mechanics/#{@mechanic.id}"
+
+    within '.rides' do
+      expect(page.all('li')[0].to have_content(@ride_2.name))
+      expect(page.all('li')[1].to have_content(@ride_3.name))
+      expect(page.all('li')[2].to have_content(@ride_1.name))
     end
   end
 end
