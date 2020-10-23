@@ -21,7 +21,7 @@ describe AmusementPark, type: :model do
     end
 
     it "can find average thrill rating" do
-        expect(@park_1.average_thrill_rating.round(1)).to eq(8.6)
+        expect(@park_1.average_thrill_rating.to_f.round(1)).to eq(8.7)
     end
   end
 end
