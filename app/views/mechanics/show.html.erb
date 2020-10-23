@@ -5,15 +5,17 @@
 
 <section class="rides">
   <h2>Current rides they're working on:</h2>
-  <% @mechanic.rides.each do |ride| %>
-    <p><%= ride.name %></p>
+  <ul>
+  <% @mechanic.alphabetized_rides.each do |ride| %>
+    <li><%= ride.name %></li>
   <% end %>
+</ul>
 </section>
 
 <section class="add-ride-form">
   <%= form_tag("/mechanics/#{@mechanic.id}") do %>
     <%= label_tag :add_a_ride_to_workload %>
     <%= text_field_tag :add_ride %>
-    <%= submit_tag "Submit", params: {ride_id: :add_ride} %>
+    <%= submit_tag "Submit" %>
   <% end %>
 </section>
