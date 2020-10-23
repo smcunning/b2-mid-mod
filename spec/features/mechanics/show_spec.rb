@@ -71,9 +71,9 @@ describe 'mechanics show page' do
     visit "/mechanics/#{@mechanic.id}"
 
     within '.rides' do
-      expect(page.all('li')[0].to have_content(@ride_2.name))
-      expect(page.all('li')[1].to have_content(@ride_3.name))
-      expect(page.all('li')[2].to have_content(@ride_1.name))
+      expect(page.all('li')[0]).to have_content(@ride_2.name)
+      expect(page.all('li')[1]).to have_content(@ride_3.name)
+      expect(page.all('li')[2]).to have_content(@ride_1.name)
     end
   end
 end
