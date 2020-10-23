@@ -5,11 +5,14 @@ describe 'on a amusement parks show page' do
     @park_1 = AmusementPark.create(name: "Hershey Park",
                                    admission: 50.00)
     @ride_1 =          Ride.create(name: "Lightning Racer",
-                                   thrill_rating: 9)
+                                   thrill_rating: 9,
+                                   amusement_park_id: @park_1.id)
     @ride_2 =          Ride.create(name: "Storm Runner",
-                                   thrill_rating: 7)
+                                   thrill_rating: 7,
+                                   amusement_park_id: @park_1.id)
     @ride_3 =          Ride.create(name: "The Great Bear",
-                                   thrill_rating: 10)
+                                   thrill_rating: 10,
+                                   amusement_park_id: @park_1.id)
   end
 
   it 'has the name and price of admissions for that amusement park' do
