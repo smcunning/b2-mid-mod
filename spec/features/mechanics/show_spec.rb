@@ -55,14 +55,14 @@ describe 'mechanics show page' do
 
     visit "/mechanics/#{@mechanic.id}"
 
-    fill_in :add_ride, with: ride_4.name
+    fill_in :add_ride, with: ride_4.id
 
     click_button("Submit")
 
-    expect(current_page).to eq("/mechanics/#{@mechanic.id}")
+    expect(current_path).to eq("/mechanics/#{@mechanic.id}")
 
     within '.rides' do
-      expect(page).to have_content(@ride_4.name)
+      expect(page).to have_content(ride_4.name)
     end
   end
 end
